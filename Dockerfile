@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:17
 EXPOSE 8080
-ADD target/cicd-sample.jar cicd-docker-sample.jar
+ADD target/cicd-sample.jar cicd-sample.jar
 ENTRYPOINT ["java","-jar","/cicd-sample.jar"]
