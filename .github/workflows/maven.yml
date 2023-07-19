@@ -30,3 +30,12 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Build & push Docker image
+      with:
+        image: rohroy97/github-action-cicd
+        tags: latest
+        registry: docker.io
+        dockerfile: Dockerfile.ci
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
